@@ -20,6 +20,7 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount(){
+<<<<<<< HEAD
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth);
@@ -37,6 +38,13 @@ class App extends React.Component {
         this.setState({currentUser: userAuth})
         console.log(this.state)
       }
+=======
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
+      
+      // this.setState({currentUser: user})
+      console.log(user)
+>>>>>>> 35ef27b07ada5acd58aa2022dd58088e719a12db
     })
   }
 
