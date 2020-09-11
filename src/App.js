@@ -1,11 +1,11 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import shopPage from './page/shop/shop.component';
-
 import './App.css';
 import HomePage from './page/homepage/homepage.component'
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './page/sign-in-and-sign-up/sign-in-and-sign-up.component';
+
 import {auth, createUserProfileDocument} from './firebase/firebase.utils'
 
 class App extends React.Component {
@@ -31,12 +31,9 @@ class App extends React.Component {
               ...snapShot.data()
             }
           })
-
-          console.log(this.state)
         });
       } else {
         this.setState({currentUser: userAuth})
-        console.log(this.state)
       }
     })
   }
