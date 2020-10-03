@@ -36,7 +36,6 @@ export const createUserProfileDocument = async (
       console.log(err.message, 'Error creategin user');
     }
   }
-
   return userRef;
 };
 
