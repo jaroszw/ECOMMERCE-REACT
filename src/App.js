@@ -1,15 +1,15 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import shopPage from './page/shop/shop.component';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import shopPage from "./page/shop/shop.component";
 
-import './App.css';
-import HomePage from './page/homepage/homepage.component';
-import Header from './components/header/header.component';
-import SignInAndSignUpPage from './page/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import "./App.css";
+import HomePage from "./page/homepage/homepage.component";
+import Header from "./components/header/header.component";
+import SignInAndSignUpPage from "./page/sign-in-and-sign-up/sign-in-and-sign-up.component";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
-import { connect } from 'react-redux';
-import { setCurrentUser } from './redux/user/user.asctions';
+import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/user/user.asctions";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -38,6 +38,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("RENDER APP");
     return (
       <div>
         <Header />
@@ -62,6 +63,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = ({ user }) => {
+  console.log("MTS App");
   return {
     currentUser: user.currentUser,
   };
