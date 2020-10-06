@@ -11,7 +11,6 @@ class shopPage extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { collections } = this.state;
 
     return (
