@@ -10,6 +10,8 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.asctions";
+import { selectCurrentUser } from "./redux/user/user.selectors.js";
+import { createStructuredSelector } from "reselect";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -38,7 +40,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("RENDER APP");
     return (
       <div>
         <Header />
@@ -62,12 +63,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => {
-  console.log("MTS App");
-  return {
-    currentUser: user.currentUser,
-  };
-};
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
