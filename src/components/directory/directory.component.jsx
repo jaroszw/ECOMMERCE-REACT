@@ -7,7 +7,6 @@ import { createStructuredSelector } from "reselect";
 import "./directory.styless.scss";
 
 const Directory = ({ sections }) => {
-  console.log(sections);
   return (
     <div className="directory-menu">
       {sections.map(({ id, ...otherSectionProps }) => (
