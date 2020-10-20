@@ -244,10 +244,6 @@ const SHOP_DATA = {
       }
     ]
   }
-<<<<<<< HEAD:src/redux/shop/shop.data.js
-];
-=======
 };
->>>>>>> testing:src/page/shop/shop.data.js
 
 export default SHOP_DATA;

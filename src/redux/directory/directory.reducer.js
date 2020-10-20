@@ -34,7 +34,6 @@ const INITIAL_STATE = {
     },
   ],
 };
-<<<<<<< HEAD
 
 const directoryReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -44,15 +43,3 @@ const directoryReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default directoryReducer;
-=======
-  
-const directoryReducer = (state = INITIAL_STATE, action) => {
-  switch(action.type) {
-    default:
-      return state;
-  };
-}
-
-export default directoryReducer;
-  
->>>>>>> testing
