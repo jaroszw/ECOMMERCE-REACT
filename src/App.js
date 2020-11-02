@@ -10,7 +10,7 @@ import CheckoutPage from './page/checkout/checkout.component';
 import {
   auth,
   createUserProfileDocument,
-  // addCollectionAndDocuments,
+  // addCollectionAndDocuments, // METHOD FROM FIREBASE UTILS TO ADD ITEMS TO FIREBASE
 } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
@@ -18,6 +18,7 @@ import { selectCurrentUser } from './redux/user/user.selectors.js';
 import { createStructuredSelector } from 'reselect';
 
 // import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
+// SELECTOR TO PROVIDE SHOP DATA ARRAY TO FIREBASE METHOD
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -41,6 +42,8 @@ class App extends React.Component {
         //   'collections',
         //   collectionsArray.map(({ title, items }) => ({ title, items }))
         // );
+
+        //METHOD TO ADD ITEMS TO COLLECTION FIREBASE 
       }
     });
   }
