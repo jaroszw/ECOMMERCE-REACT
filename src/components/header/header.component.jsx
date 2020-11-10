@@ -1,5 +1,4 @@
 import React from 'react';
-import './header.styles.scss';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import { connect } from 'react-redux';
