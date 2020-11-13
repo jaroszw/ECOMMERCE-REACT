@@ -1,15 +1,15 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 const config = {
-  apiKey: 'AIzaSyAySRwl-RKReGJ2pCM4KHTCLgr1IvwCUz8',
-  authDomain: 'vc-db-957ad.firebaseapp.com',
-  databaseURL: 'https://vc-db-957ad.firebaseio.com',
-  projectId: 'vc-db-957ad',
-  storageBucket: 'vc-db-957ad.appspot.com',
-  messagingSenderId: '105883833270',
-  appId: '1:105883833270:web:d9995ef5ccca29b7722717',
+  apiKey: "AIzaSyAySRwl-RKReGJ2pCM4KHTCLgr1IvwCUz8",
+  authDomain: "vc-db-957ad.firebaseapp.com",
+  databaseURL: "https://vc-db-957ad.firebaseio.com",
+  projectId: "vc-db-957ad",
+  storageBucket: "vc-db-957ad.appspot.com",
+  messagingSenderId: "105883833270",
+  appId: "1:105883833270:web:d9995ef5ccca29b7722717",
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -21,7 +21,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
-    console.log('creatign New User');
+    console.log("creatign New User");
 
     try {
       await userRef.set({
@@ -31,7 +31,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         ...additionalData,
       });
     } catch (error) {
-      console.log('error createing user', error.message);
+      console.log("error createing user", error.message);
     }
   }
   return userRef;
@@ -74,10 +74,10 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => {
-  auth.signInWithPopup(provider);
+  auth.signInWithPopup(googleProvider);
 };
 
 export default firebase;
