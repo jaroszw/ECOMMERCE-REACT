@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: 'AIzaSyAySRwl-RKReGJ2pCM4KHTCLgr1IvwCUz8',
+  apiKey: process.env.REACT_APP_APIKEY,
   authDomain: 'vc-db-957ad.firebaseapp.com',
   databaseURL: 'https://vc-db-957ad.firebaseio.com',
   projectId: 'vc-db-957ad',
