@@ -1,7 +1,7 @@
 {
   "name": "vandal",
   "version": "1.0.0",
-  "engine": {
+  "engines": {
     "node": "14.8.0",
     "npm": "6.14.7"
   },
