@@ -4,12 +4,11 @@ import 'firebase/auth';
 
 const config = {
   apiKey: process.env.REACT_APP_APIKEY,
-  authDomain: 'vc-db-957ad.firebaseapp.com',
-  databaseURL: 'https://vc-db-957ad.firebaseio.com',
-  projectId: 'vc-db-957ad',
-  storageBucket: 'vc-db-957ad.appspot.com',
-  messagingSenderId: '105883833270',
-  appId: '1:105883833270:web:d9995ef5ccca29b7722717',
+  authDomain: 'ecommerceclth.firebaseapp.com',
+  projectId: 'ecommerceclth',
+  storageBucket: 'ecommerceclth.appspot.com',
+  messagingSenderId: '635410647550',
+  appId: '1:635410647550:web:4da45f6fdc111fa2f018af',
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -38,7 +37,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 // Function to add data to firebase
-
 export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd
@@ -50,6 +48,11 @@ export const addCollectionAndDocuments = async (
     batch.set(newDocRef, obj);
   });
   return await batch.commit();
+};
+
+export const objtoarr = (data) => {
+  const dataTransofrmed = data ? Object.keys(data).map((key) => data[key]) : [];
+  return dataTransofrmed;
 };
 
 export const convertCollectionsSnapshotToMap = (collections) => {

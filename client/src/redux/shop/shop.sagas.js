@@ -10,8 +10,6 @@ import {
 } from './shop.actions';
 
 export function* fetchCollectionsAsync() {
-  yield console.log('I am fired');
-
   try {
     const collectionRef = firestore.collection('collections');
     const snapshot = yield collectionRef.get();
@@ -19,7 +17,6 @@ export function* fetchCollectionsAsync() {
       convertCollectionsSnapshotToMap,
       snapshot
     );
-    console.log(collectionsMap);
     yield put(fetchCollectionSuccess(collectionsMap));
   } catch (error) {
     yield put(fetchCollectionsFailure(error.message));
